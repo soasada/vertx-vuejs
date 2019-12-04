@@ -19,6 +19,7 @@
         <surefire-plugin.version>2.22.2</surefire-plugin.version>
         <compiler-plugin.version>3.8.1</compiler-plugin.version>
         <resources-plugin.version>3.1.0</resources-plugin.version>
+        <shade-plugin.version>3.2.1</shade-plugin.version>
     </properties>
 
     <dependencies>
@@ -113,6 +114,31 @@
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>${surefire-plugin.version}</version>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-shade-plugin</artifactId>
+                <version>${shade-plugin.version}</version>
+                <configuration>
+                    <finalName>${project.artifactId}-${project.version}</finalName>
+                    <!-- put your configurations here -->
+                    <transformers>
+                        <transformer
+                                implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
+                            <mainClass>com.popokis.vertx_vuejs.Main</mainClass>
+                        </transformer>
+                    </transformers>
+                </configuration>
+
+                <executions>
+                    <execution>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>shade</goal>
+                        </goals>
+                    </execution>
+                </executions>
             </plugin>
 
             <plugin>
