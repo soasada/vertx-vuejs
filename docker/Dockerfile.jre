@@ -1,0 +1,10 @@
+FROM adoptopenjdk:13-jre-hotspot-bionic
+
+ENV VV_HTTP_ADDR=0.0.0.0
+ENV VV_HTTP_PORT=8080
+
+COPY vertx-backend/target/vertx-backend-*.jar /deployments/app.jar
+
+EXPOSE 8080
+
+CMD ["java", "-jar", "/deployments/app.jar"]

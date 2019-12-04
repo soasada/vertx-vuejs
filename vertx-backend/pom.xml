@@ -13,8 +13,6 @@
 
     <properties>
         <vertx.version>3.8.4</vertx.version>
-        <mysql-connector-java.version>8.0.18</mysql-connector-java.version>
-        <hikari.version>3.4.1</hikari.version>
         <jackson.version>2.10.1</jackson.version>
         <junit.version>5.5.2</junit.version>
         <lombok.version>1.18.10</lombok.version>
@@ -48,17 +46,10 @@
             <version>${vertx.version}</version>
         </dependency>
 
-        <!--SQL Database-->
         <dependency>
-            <groupId>mysql</groupId>
-            <artifactId>mysql-connector-java</artifactId>
-            <version>${mysql-connector-java.version}</version>
-        </dependency>
-
-        <dependency>
-            <groupId>com.zaxxer</groupId>
-            <artifactId>HikariCP</artifactId>
-            <version>${hikari.version}</version>
+            <groupId>io.vertx</groupId>
+            <artifactId>vertx-mysql-client</artifactId>
+            <version>${vertx.version}</version>
         </dependency>
 
         <!-- JSON -->
