@@ -49,4 +49,4 @@ or
 
 `docker exec -it jre bash`
 
-**Now you can open the app in a web browser**
+**Now you can open the app in a web browser**: http://localhost:8080
