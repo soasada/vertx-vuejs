@@ -6,7 +6,7 @@ Simple web application to demonstrate how to use Vert.x and Vue.js together.
 
 For deploying the app you will need the following tools installed in your machine:
 
-* Linux.
+* Linux (I'm using Ubuntu 18.04).
 * Docker.
 * JDK 13 with proper `$JAVA_HOME` configured.
 * Apache Maven.
@@ -48,3 +48,5 @@ or
 3. For shell access while the docker image is running (optional): 
 
 `docker exec -it jre bash`
+
+**Now you can open the app in a web browser**
