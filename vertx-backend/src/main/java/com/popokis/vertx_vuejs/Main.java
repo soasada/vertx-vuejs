@@ -15,11 +15,13 @@ public final class Main {
     private Main() {}
 
     public static void main(String[] args) {
+        String addr = System.getenv("VV_HTTP_ADDR");
+        String port = System.getenv("VV_HTTP_PORT");
         HttpServer httpServer = vertx.createHttpServer();
         Router router = Router.router(vertx);
 
         router.route("/*").handler(StaticHandler.create("public"));
 
-        httpServer.requestHandler(router).listen(8080);
+        httpServer.requestHandler(router).listen(Integer.parseInt(port), addr);
     }
 }
